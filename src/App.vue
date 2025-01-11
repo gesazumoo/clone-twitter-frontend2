@@ -1,5 +1,5 @@
 <template>
-  <h1>Hi Vue.js</h1>
+  <h2>Hi Vue.js</h2>
   <h1>Hello Github</h1>
 </template>
 

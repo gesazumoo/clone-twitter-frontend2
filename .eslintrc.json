@@ -1,0 +1,22 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "extends": [
+    "plugin:vue/essential",
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "parser": "babel-eslint"
+  },
+  "rules": {
+    "no-console": "off", // 콘솔 로그 허용
+    "no-debugger": "off", // 디버거 허용
+    "vue/no-unused-components": "warn", // 사용하지 않는 컴포넌트 경고
+    // "semi": ["error", "always"] // 세미콜론 사용 강제
+    "semi": ["error", "never"] // 세미콜론 사용 금지
+    // "max-len": ["error", { "code": 100 }]
+  }
+}

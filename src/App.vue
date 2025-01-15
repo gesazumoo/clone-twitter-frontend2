@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <LoginPage />
   </div>
 </template>
@@ -12,4 +12,18 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+body {
+  background:black;
+  color: white;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
+</style>

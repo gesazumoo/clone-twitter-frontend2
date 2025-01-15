@@ -1,13 +1,14 @@
 <template>
   <div>
-    <h2>Hi Vue.js</h2>
-    <h1>Hello Github</h1>
+    <LoginPage />
   </div>
 </template>
 
 <script>
+import LoginPage from './views/LoginPage.vue'
 export default {
   name: "App",
+  components: {LoginPage},
 }
 </script>
 

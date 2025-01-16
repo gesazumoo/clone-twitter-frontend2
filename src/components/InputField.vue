@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <input class="input-form" :type="type" :placeholder="placeholder" :value="modelValue" @input="updateValue"/>
+        <span v-if="!modelValue" class="error-message">필수값입니다.</span>
     </div>
 </template>
 

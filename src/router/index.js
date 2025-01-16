@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginPage from '../views/LoginPage.vue' // LoginPage 컴포넌트 경로
 import SignUpPage from '../views/SignUpPage.vue'// SignupPage 컴포넌트 경로
-import TestComponent from '../views/TestComponent.vue'
+import ComputedComponent from '../views/ComputedComponent.vue'
+import MethodComponent from '../views/MethodComponent.vue'
 const routes = [
   {
     path: '/',
@@ -14,9 +15,14 @@ const routes = [
     component: SignUpPage
   },
   {
-    path: '/test',
-    name: 'Test',
-    component: TestComponent
+    path: '/computed',
+    name: 'computed',
+    component: ComputedComponent
+  },
+  {
+    path: '/method',
+    name: 'method',
+    component: MethodComponent
   }
 ]
 

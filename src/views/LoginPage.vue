@@ -29,10 +29,11 @@ export default {
     },
     methods: {
         login() {
-            let email = ""
-            console.log('inner email :' + email)
-            console.log('email :' + this.email)
-            console.log('password :' + this.password)
+            if (!this.email || !this.password) {
+                alert("모든 필드를 입력해주세요.")
+                return
+            }
+            this.$router.push("/main")
         }
     },
 }

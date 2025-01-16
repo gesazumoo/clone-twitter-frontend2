@@ -3,6 +3,8 @@ import LoginPage from '../views/LoginPage.vue' // LoginPage 컴포넌트 경로
 import SignUpPage from '../views/SignUpPage.vue'// SignupPage 컴포넌트 경로
 import ComputedComponent from '../views/ComputedComponent.vue'
 import MethodComponent from '../views/MethodComponent.vue'
+import MainPage from '../views/MainPage.vue'
+
 const routes = [
   {
     path: '/',
@@ -13,6 +15,11 @@ const routes = [
     path: '/signup',
     name: 'SignUp',
     component: SignUpPage
+  },
+  {
+    path: '/main',
+    name: 'MainPage',
+    component: MainPage
   },
   {
     path: '/computed',

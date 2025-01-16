@@ -26,4 +26,17 @@ body {
   align-items: center;
 }
 
+.logo {
+  max-width: 60px;
+  height: auto;
+}
+
+
+.logo-container {
+  display: flex;
+  /* 디폴트 디렉션은? row */
+  justify-content: center;
+  align-items: center;
+}
+
 </style>

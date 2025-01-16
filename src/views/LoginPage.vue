@@ -1,5 +1,8 @@
 <template>
 <div>
+    <div class="logo-container">
+        <img src="@/assets/x-logo.png" class="logo"/>
+    </div>
     <!-- <InputField :type="'text'" :placeholder="'Email'" :modelValue="email" @update:model-value="email = $event"/> -->
     <InputField :type="'text'" :placeholder="'Email'" v-model="email"/>
     <InputField :type="'password'" :placeholder="'Password'" v-model="password"/>

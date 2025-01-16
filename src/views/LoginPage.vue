@@ -7,7 +7,7 @@
     <InputField :type="'text'" :placeholder="'Email'" v-model="email"/>
     <InputField :type="'password'" :placeholder="'Password'" v-model="password"/>
 
-    <button class="login-button" @click="login">로그인하기</button>
+    <button class="button" @click="login">로그인하기</button>
 
     <div>
         계정이 없으신가요?

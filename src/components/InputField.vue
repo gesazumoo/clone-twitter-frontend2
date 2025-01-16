@@ -12,7 +12,7 @@ export default {
         placeholder: String,
         modelValue: String,
     },
-    emits: ["update:model-value"],
+    emits: ["update:modelValue"],
     methods: {
         updateValue(event) {
             const value = event.target.value.trim()

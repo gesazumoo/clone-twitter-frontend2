@@ -1,6 +1,7 @@
 <template>
 <div>
-    <InputField :type="'text'" :placeholder="'Email'" :modelValue="email" @update:model-value="email = $event"/>
+    <!-- <InputField :type="'text'" :placeholder="'Email'" :modelValue="email" @update:model-value="email = $event"/> -->
+    <InputField :type="'text'" :placeholder="'Email'" v-model="email"/>
     <InputField/>
 
     <button @click="login">로그인하기</button>

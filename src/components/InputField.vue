@@ -1,13 +1,18 @@
 <template>
     <div class="container">
-        <input class="input-form" :type="type" :placeholder="placeholder" :value="modelValue" @input="updateValue"/>
-        <span v-if="!modelValue" class="error-message">{{ errorMsg }}</span>
+        <input class="input-form" :type="type" :placeholder="placeholder" :value="modelValue" @input="updateValue" @blur="handleBlur"/>
+        <span v-if="showError && !modelValue" class="error-message">{{ errorMsg }}</span>
     </div>
 </template>
 
 <script>
 export default {
     name: "InputField",
+    data() {
+        return {
+            showError: false,
+        }
+    },
     props: {
         type: {
             type: String,
@@ -31,7 +36,10 @@ export default {
         updateValue(event) {
             const value = event.target.value.trim()
             this.$emit("update:modelValue", value)
-        }
+        },
+        handleBlur() {
+            this.showError = true
+        },
     }
 }
 </script>

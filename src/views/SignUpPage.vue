@@ -10,7 +10,8 @@
     <InputField type="text" placeholder="이름" v-model="name" />
     <InputField type="password" placeholder="비밀번호" v-model="password" />
     <InputField type="password" placeholder="비밀번호 확인" v-model="passwordConfirm" />
-
+    <span v-if="!isPasswordMatch && passwordConfirm" class="error-message">비밀번호가 일치하지 않습니다.</span
+    >
     <button class="button" @click="signUp">회원가입하기</button>
   </div>
 </template>
@@ -31,7 +32,16 @@ export default {
     },
     methods: {
         signUp() {
+            if(!this.isPasswordMatch) {
+                alert('비밀번호가 일치하지 않습니다.')
+                return
+            }
             console.log(this.email, this.name, this.password, this.passwordConfirm)
+        }
+    },
+    computed: {
+        isPasswordMatch() {
+            return this.password === this.passwordConfirm
         }
     }
 }

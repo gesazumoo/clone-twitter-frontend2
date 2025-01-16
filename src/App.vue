@@ -48,4 +48,8 @@ body {
     cursor: pointer;
 }
 
+.error-message{
+  color: red;
+  font-size: small;
+}
 </style>

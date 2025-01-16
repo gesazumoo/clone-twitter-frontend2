@@ -11,7 +11,7 @@
 
     <div>
         계정이 없으신가요?
-        <span class="signup-button" @click="signUp" >가입하기</span>
+        <RouterLink class="signup-button" to="/signup">SignUp</RouterLink>
     </div>
 </div>
 </template>

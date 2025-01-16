@@ -52,5 +52,6 @@ body {
   color: red;
   font-size: small;
   width: 100%;
+  margin-bottom: 5px;
 }
 </style>

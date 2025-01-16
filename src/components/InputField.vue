@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <input class="input-form" :type="type" :placeholder="placeholder" :value="modelValue" @input="updateValue"/>
-        <span v-if="!modelValue" class="error-message">필수값입니다.</span>
+        <span v-if="!modelValue" class="error-message">{{ errorMsg }}</span>
     </div>
 </template>
 
@@ -9,9 +9,22 @@
 export default {
     name: "InputField",
     props: {
-        type: String,
-        placeholder: String,
-        modelValue: String,
+        type: {
+            type: String,
+            default: "text", // type의 기본값 설정
+        },
+        placeholder: {
+            type: String,
+            default: "입력하세요", // placeholder의 기본값 설정
+        },
+        modelValue: {
+            type: String,
+            required: true, // modelValue는 필수 prop
+        },
+        errorMsg: {
+            type: String,
+            default: "이 값은 필수값입니다.",
+        },
     },
     emits: ["update:modelValue"],
     methods: {

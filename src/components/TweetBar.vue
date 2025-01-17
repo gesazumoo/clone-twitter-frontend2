@@ -1,6 +1,7 @@
 <template>
-  <div>
-    TweetBar.vue
+  <div class="container">
+    <input class="input-form" type="text" placeholder="what's good, 장다미?"/>
+    <img class="search-icon" src="@/assets/search.png" alt="Search" />
   </div>
 </template>
 
@@ -10,6 +11,42 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 300px;
+    height: auto;
+    position: relative;
+}
+
+.input-form {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 10px;
+  /* 
+   */
+
+   z-index: 0;
+}
+
+.search-icon {
+  box-sizing: border-box;
+  width: 40px;
+  height: 100%;
+  background-color: white;
+  border-radius: 20px;
+  
+  /*  */
+  position: absolute;
+  right: 0px;
+  z-index: 1;
+  border: 1px solid #1D9BF0;
+  cursor: pointer;
+}
 
 </style>

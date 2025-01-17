@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="title-container">
         <h1>Home</h1>
         <div>장다미님</div>
     </div>
@@ -20,5 +20,10 @@ export default {
 </script>
 
 <style>
-
+.title-container {
+    width: 300px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
 </style>

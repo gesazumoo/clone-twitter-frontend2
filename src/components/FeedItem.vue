@@ -2,19 +2,46 @@
     <div class="feed-container">
       <div class="feed-header">
         <div class="feed-content">{{ feed.content }}</div>
-        <button class="feed-delete-button">X</button>
+        <button class="feed-delete-button" @click="handleClick(feed)">X</button>
       </div>
       <div class="feed-name">{{ feed.user.name }}</div>
     </div>
 </template>
 <script>
+import { useFeedStore } from '@/store/feed'
 export default {
+    data() {
+        return {
+            feedStore :useFeedStore()
+        }
+    },
     props: {
         feed: {
             type: Object,
             required: true
         }
-    }
+    },
+    methods: {
+        handleClick(feed){
+            this.$confirm(
+                {
+                message: 'Are you sure?',
+                button: {
+                    no: 'No',
+                    yes: 'Yes'
+                },
+                callback: confirm => {
+                    if (confirm) {
+                        console.log(confirm)
+                        console.log(feed)
+                        // 삭제하기 action 호출
+                        this.feedStore.removedFeed(feed.id)
+                    }
+                }
+                }
+            )
+        }
+    },
 }
 </script>
 <style scoped>

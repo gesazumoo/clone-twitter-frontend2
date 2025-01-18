@@ -1,13 +1,19 @@
 <template>
   <div class="container">
-    <input class="input-form" type="text" placeholder="what's good, 장다미?"/>
+    <input class="input-form" type="text" :placeholder="userStore.placeholder"/>
     <img class="search-icon" src="@/assets/search.png" alt="Search" />
   </div>
 </template>
 
 <script>
+import { useUserStore } from '@/store/user'
 export default {
-    name: "TweetBar"
+    name: "TweetBar",
+    data() {
+      return {
+        userStore: useUserStore()
+      }
+    },
 }
 </script>
 

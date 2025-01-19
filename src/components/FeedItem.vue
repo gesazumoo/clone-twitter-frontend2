@@ -2,17 +2,19 @@
     <div class="feed-container">
       <div class="feed-header">
         <div class="feed-content">{{ feed.content }}</div>
-        <button class="feed-delete-button" @click="handleClick(feed)">X</button>
+        <button class="feed-delete-button" @click="handleClick(feed)" v-if="feed.user.id === userStore.id">X</button>
       </div>
       <div class="feed-name">{{ feed.user.name }}</div>
     </div>
 </template>
 <script>
 import { useFeedStore } from '@/store/feed'
+import { useUserStore } from '@/store/user'
 export default {
     data() {
         return {
-            feedStore :useFeedStore()
+            feedStore :useFeedStore(),
+            userStore : useUserStore()
         }
     },
     props: {
@@ -25,17 +27,14 @@ export default {
         handleClick(feed){
             this.$confirm(
                 {
-                message: 'Are you sure?',
+                message: '정말 삭제하시겠습니까?',
                 button: {
-                    no: 'No',
-                    yes: 'Yes'
+                    no: '아뇨',
+                    yes: '네'
                 },
                 callback: confirm => {
                     if (confirm) {
-                        console.log(confirm)
-                        console.log(feed)
-                        // 삭제하기 action 호출
-                        this.feedStore.removedFeed(feed.id)
+                        this.feedStore.removeFeed(feed.id)
                     }
                 }
                 }

@@ -18,22 +18,41 @@
 
 <script>
 import InputField from '@/components/InputField.vue'
+import { api } from "@/api"
+import { useUserStore } from "@/store/user"
 export default {
     name: "LoginPage",
     components: { InputField },
     data() {
         return {
+            userStore: useUserStore(),
             email: "",
             password: "",
         }
     },
     methods: {
-        login() {
+        async login() {
             if (!this.email || !this.password) {
                 alert("모든 필드를 입력해주세요.")
                 return
             }
-            this.$router.push("/main")
+            const payload = {
+                email: this.email,
+                password: this.password,
+            }
+
+            try {
+                const response = await api.post("/users/login", payload)
+                console.log("로그인 성공:", response.data)
+
+                this.userStore.setUser(response.data)
+                this.userStore.saveToken(response.data.access_token)
+
+                this.$router.push("/main")
+            } catch (error) {
+                console.error("로그인 실패:", error)
+                alert("로그인 실패 다시 시도해주세요.")
+            }
         }
     },
 }

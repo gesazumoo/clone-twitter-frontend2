@@ -3,9 +3,6 @@
     <div v-if="feedStore.feedData.length > 0">
       <feedItem v-for="feed in feedStore.feedData" :key="feed.id" :feed="feed"/>
     </div>
-    <div v-else>
-      <div>피드가 없습니다.</div>
-    </div>
   </div>
 </template>
 
@@ -31,5 +28,4 @@ export default {
     height: 60vh;
     overflow-y: auto;
 }
-
 </style>

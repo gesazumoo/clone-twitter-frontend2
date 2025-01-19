@@ -9,17 +9,41 @@ const routes = [
   {
     path: '/',
     name: 'Login',
-    component: LoginPage
+    component: LoginPage,
+    beforeEnter: (to, from, next) => {
+      const token = localStorage.getItem('access_token')
+      if (token) {
+        next('/main')
+      } else {
+        next()
+      }
+    },
   },
   {
     path: '/signup',
     name: 'SignUp',
-    component: SignUpPage
+    component: SignUpPage,
+    beforeEnter: (to, from, next) => {
+      const token = localStorage.getItem('access_token')
+      if (token) {
+        next('/main')
+      } else {
+        next()
+      }
+    },
   },
   {
     path: '/main',
     name: 'MainPage',
-    component: MainPage
+    component: MainPage,
+    beforeEnter: (to, from, next) => {
+      const token = localStorage.getItem('access_token')
+      if (token) {
+        next()
+      } else {
+        next('/')
+      }
+    },
   },
   {
     path: '/computed',

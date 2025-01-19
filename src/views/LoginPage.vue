@@ -11,7 +11,7 @@
 
     <div>
         계정이 없으신가요?
-        <RouterLink class="signup-button" to="/signup">SignUp</RouterLink>
+        <RouterLink class="signup-button" to="/signup">Sign Up</RouterLink>
     </div>
 </div>
 </template>

@@ -1,14 +1,17 @@
 import axios from 'axios'
+// ... existing code ...
+const SERVER_URL = process.env.NODE_ENV === 'production'
+  ? 'https://clone-twitter-448213.el.r.appspot.com/'
+  : 'http://localhost:3000/'
 
-// 기본 API 인스턴스 (로그인 및 회원가입용)
 const api = axios.create({
-  baseURL: 'https://clone-twitter-448213.el.r.appspot.com', // 기본 URL 설정
+  baseURL: SERVER_URL, // SERVER_URL을 사용하여 기본 URL 설정
   timeout: 5000, // 타임아웃 설정
 })
 
 // 인증이 필요한 API 인스턴스 (피드 조회용)
 const authApi = axios.create({
-  baseURL: 'https://clone-twitter-448213.el.r.appspot.com', // 기본 URL 설정
+  baseURL: SERVER_URL, // SERVER_URL을 사용하여 기본 URL 설정
   timeout: 5000, // 타임아웃 설정
 })
 
